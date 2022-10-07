@@ -27,3 +27,7 @@ php ファイルは html 配下に置く
 ## 必要資格情報
 
 まだ作ってない
+
+## その他
+
+- Bootstrap License: Code licensed MIT, docs CC BY 3.0.
