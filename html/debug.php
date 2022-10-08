@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<?php phpinfo(); ?>
+<?php
+    echo "SERVER_NAME: " .$_SERVER['SERVER_NAME']. "\n";
+    echo "DOCUMENT_ROOT :" .$_SERVER['DOCUMENT_ROOT'];
+    phpinfo(); 
+?>
 </body>
 </html>
