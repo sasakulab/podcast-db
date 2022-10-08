@@ -31,10 +31,28 @@ environment.ini は直下に置く
 
 ```ini
 [mysqlauth]
+mysqlauth.hostname = "mysql"
+mysqlauth.database = "poddb"
 mysqlauth.username = "{ユーザー名}"
 mysqlauth.password = "{パスワード}"
+
+```yaml
+environment:
+  - MYSQL_ROOT_PASSWORD=root
+  - MYSQL_DATABASE=test
+  - MYSQL_USER=test
+  - MYSQL_PASSWORD=test
 ```
+
+MySQL の 資格情報は、docker-compose.yml に書いています。
+
 
 ## その他
 
 - Bootstrap License: Code licensed MIT, docs CC BY 3.0.
+
+## メモ
+
+```sh
+docker-php-ext-install pdo_mysql
+```

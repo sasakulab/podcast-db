@@ -1,3 +1,5 @@
+<?php include $_SERVER['DOCUMENT_ROOT']."/lib/components/sql.php" ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +10,13 @@
 </head>
 <body>
 <?php
+    try {
+        $pdo = new PDO("mysql:host=$host;dbname=$dbn", "$user", "$pass");
+        print('SQL の 接続に成功しました。<br>');
+    } catch (PDOException $e) {
+        print('Error:' . $e->getMessage());
+        die();
+    }
     echo "SERVER_NAME: " .$_SERVER['SERVER_NAME']. "\n";
     echo "DOCUMENT_ROOT :" .$_SERVER['DOCUMENT_ROOT'];
     phpinfo(); 

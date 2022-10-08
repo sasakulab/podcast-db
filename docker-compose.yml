@@ -5,11 +5,12 @@ services:
     image: php:7.2-apache
     volumes:
       - ./php.ini:/usr/local/etc/php/php.ini
+      - ./environment.ini:/var/www/html/environment.ini
       - ./html:/var/www/html
     ports:
       - 8080:80
   mysql:
-    image: mysql:5.7
+    image: mysql:8.0
     volumes:
       - ./mysql:/var/lib/mysql
     environment:
@@ -22,8 +23,8 @@ services:
     environment:
       - PMA_ARBITRARY=1
       - PMA_HOST=mysql
-      - PMA_USER=test
-      - PMA_PASSWORD=test
+      - PMA_USER=root
+      - PMA_PASSWORD=root
     links:
       - mysql
     ports:
