@@ -24,9 +24,16 @@ docker-compose stop
 
 php ファイルは html 配下に置く
 
-## 必要資格情報
+## 必要認証情報
 
-まだ作ってない
+environment.ini に MySQL の以下の情報を書く。
+environment.ini は直下に置く
+
+```ini
+[mysqlauth]
+mysqlauth.username = "{ユーザー名}"
+mysqlauth.password = "{パスワード}"
+```
 
 ## その他
 
