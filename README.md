@@ -39,7 +39,6 @@ mysqlauth.password = "{パスワード}"
 
 MySQL の 資格情報は、docker-compose.yml に書いています。
 
-
 ```yaml
 environment:
   - MYSQL_ROOT_PASSWORD=root
