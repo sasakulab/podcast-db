@@ -1,4 +1,4 @@
-AuthUserFile /var/www/html/.htpasswd
-AuthName “System Configuration”
+AuthUserFile /var/www/html/setup/.htpasswd
+AuthName "System Configuration"
 AuthType Basic
 require valid-user
