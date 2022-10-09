@@ -217,3 +217,27 @@
     color: white;
     vertical-align: middle;
 }
+
+.btn-tag {
+    display: inline-block;
+    background: white; /* 背景色 */
+    color: #1a8cd8; /* 文字色 */
+    padding: 12px 20px; /* 上下の余白、左右の余白 */
+    text-decoration: none; /* デフォルトで入るリンクの下線を消す */
+    border-color: #1a8cd8;
+    border: 1.5px solid;
+    border-radius: 30px; /* 角を丸くする */
+}
+
+.btn-tag:before {
+    content: "";
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin: -3px 5px 0 0;
+    background: url("/img/hash.svg") no-repeat;
+    background-size: contain;
+    color: white;
+    vertical-align: middle;
+    
+}
