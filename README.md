@@ -35,6 +35,10 @@ mysqlauth.hostname = "mysql"
 mysqlauth.database = "poddb"
 mysqlauth.username = "{ユーザー名}"
 mysqlauth.password = "{パスワード}"
+```
+
+MySQL の 資格情報は、docker-compose.yml に書いています。
+
 
 ```yaml
 environment:
@@ -44,8 +48,13 @@ environment:
   - MYSQL_PASSWORD=test
 ```
 
-MySQL の 資格情報は、docker-compose.yml に書いています。
+.htpasswd
 
+.htpasswd を /html 配下におきます。
+
+```.htpasswd
+{user}:{pass の hash}
+```
 
 ## その他
 

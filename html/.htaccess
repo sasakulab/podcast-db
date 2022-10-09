@@ -1,3 +1,11 @@
 <files "*.ini">
 Deny from all
 </files>
+
+<files "/setup">
+AuthType Basic
+AuthUserFile /var/www/html/.htpasswd
+AuthName “System Configuration”
+AuthType Basic
+require valid-user
+</files>
