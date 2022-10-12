@@ -68,6 +68,21 @@
         // $stmt->bindValue(':name', $name, PDO::PARAM_STR); / 今回は変数の必要がないので利用しない
         $stmt3->execute();
 
+        # table: User Join to Programs
+        $stmt4 = $pdo->prepare("
+            CREATE TABLE t_jointo(
+                jointo_id INT(8) NOT NULL AUTO_INCREMENT,
+                program_id INT(4) NOT NULL,
+                joinuser_id INT(4) NOT NULL,
+                type VARCHAR(10) NULL,
+                PRIMARY KEY (jointo_id));
+        ");
+
+        // $stmt->bindValue(':name', $name, PDO::PARAM_STR); / 今回は変数の必要がないので利用しない
+        $stmt4->execute();
+
+        echo 'complete';
+
     } catch (PDOException $e) {
         print('Error:' . $e->getMessage());
         die();
