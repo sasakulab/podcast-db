@@ -64,6 +64,7 @@
                 contents VARCHAR(800) NULL,
                 PRIMARY_KEY (news_id));
         ");
+        
         // $stmt->bindValue(':name', $name, PDO::PARAM_STR); / 今回は変数の必要がないので利用しない
         $stmt->execute();
 
