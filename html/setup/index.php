@@ -20,14 +20,14 @@
                 mail VARCHAR(30) NULL,
                 website VARCHAR(100) NULL,
                 icon_path VARCHAR(100) NULL,
-                tag VARCHAR(25) NULL;
+                tag VARCHAR(25) NULL,
                 PRIMARY KEY (user_id));         
         ");
         // $stmt->bindValue(':name', $name, PDO::PARAM_STR); / 今回は変数の必要がないので利用しない
         $stmt->execute();
 
         # table: Program Database
-        $stmt = $pdo->prepare("
+        $stmt2 = $pdo->prepare("
             CREATE TABLE t_program(
                 program_id INT(4) NOT NULL AUTO_INCREMENT,
                 program_cid VARCHAR(20) NOT NULL,
@@ -39,34 +39,34 @@
                 twitter VARCHAR(20) NULL,
                 RSS VARCHAR(100) NULL,
                 pl_apple_url VARCHAR(100) NULL,
-                pl_spotify_url VARCHAR(100),
-                pl_google_url VARCHAR(100),
+                pl_spotify_url VARCHAR(100) NULL,
+                pl_google_url VARCHAR(100) NULL,
                 pl_yt_url VARCHAR(100) NULL,
                 pl_niconico_url VARCHAR(100) NULL,
                 description VARCHAR(800) NULL,
                 embed VARCHAR(400) NULL,
                 copylight VARCHAR(80) NULL,
                 tag VARCHAR(25) NULL,
-                PRIMARY_KEY (program_id));
+                PRIMARY KEY (program_id));
         ");
         // $stmt->bindValue(':name', $name, PDO::PARAM_STR); / 今回は変数の必要がないので利用しない
-        $stmt->execute();
+        $stmt2->execute();
 
         # table: News Database
-        $stmt = $pdo->prepare("
+        $stmt3 = $pdo->prepare("
             CREATE TABLE t_news(
-                news_id INT(8) NOT NULL AUTO_INCREMENT
+                news_id INT(8) NOT NULL AUTO_INCREMENT,
                 program_id INT(4) NOT NULL,
                 create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
                 update_time TIMESTAMP on update CURRENT_TIMESTAMP NOT NULL,
                 owner_user INT(4) NOT NULL,
                 tag VARCHAR(25) NULL,
                 contents VARCHAR(800) NULL,
-                PRIMARY_KEY (news_id));
+                PRIMARY KEY (news_id));
         ");
-        
+
         // $stmt->bindValue(':name', $name, PDO::PARAM_STR); / 今回は変数の必要がないので利用しない
-        $stmt->execute();
+        $stmt3->execute();
 
     } catch (PDOException $e) {
         print('Error:' . $e->getMessage());
